@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\HomeContent;
+use App\Models\Service;
 use App\Models\Story;
 use Illuminate\Http\Request;
 
@@ -12,6 +13,7 @@ class HomeController extends Controller
     {
         $content = HomeContent::first(); //tek bir kayıt olucak
         $stories = Story::all();
-        return view('welcome', compact('content','stories'));
+        $services = Service::all(); // Fetch all services
+        return view('welcome', compact('content','stories', 'services'));
     }
 }
