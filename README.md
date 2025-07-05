@@ -36,24 +36,28 @@ Aşağıda, proje kapsamında yapılan ana geliştirmeler ve mimari hakkında ö
 ## Proje Özellikleri ve Yapılanlar
 
 - **Blade Parçalama:**  
-  Tüm sayfa bölümleri (`sidebar`, `hero`, `about`, `services`, `booking`, `price-list`, `contact`, `footer`) `resources/views/partials` klasörüne taşındı ve ana sayfa üzerinden `@include` ile çağrıldı.  
-  Kod okunabilirliği ve yönetilebilirliği artırıldı.
+  Tüm sayfa bölümleri (`sidebar`, `hero`, `about`, `services`, `booking`, `price-list`, `contact`, `footer`) `resources/views/partials` klasörüne taşındı ve ana sayfa üzerinden `@include` ile çağrıldı. Kod okunabilirliği ve yönetilebilirliği artırıldı.
 
 - **Ana Layout Kullanımı:**  
   `resources/views/layouts/app.blade.php` dosyası ile ortak HTML iskeleti oluşturuldu.
 
+- **Dinamik İçerik Yönetimi:**  
+  - Ana sayfa hero bölümü ve "Our Story" (berberler) bölümü veritabanından dinamik olarak çekiliyor.
+  - `home_contents` tablosu ile ana sayfa başlık ve açıklamaları yönetiliyor.
+  - `stories` tablosu ile berberlerin adı, fotoğrafı, biyografisi ve sosyal medya linkleri yönetiliyor.
+
 - **Rezervasyon (Booking) Sistemi:**  
   - Kullanıcılar, rezervasyon formu ile randevu oluşturabiliyor.
-  - Formdan gelen veriler doğrulanıyor ve veritabanına kaydediliyor.
+  - Formdan gelen veriler doğrulanıyor ve `bookings` tablosuna kaydediliyor.
   - `BookingController` ile form işlemleri yönetiliyor.
-  - Gerekli migration ve model dosyaları oluşturuldu.
 
 - **Veritabanı Yapısı:**  
   - `bookings` tablosu: Rezervasyon bilgileri (isim, telefon, tarih, saat, şube, kişi sayısı, yorum).
   - `home_contents` tablosu: Ana sayfa dinamik içerikleri için.
+  - `stories` tablosu: Berberler ve hikayeleri için.
 
 - **Route Yönetimi:**  
-  - Ana sayfa ve rezervasyon işlemleri için gerekli route’lar tanımlandı.
+  - Ana sayfa, rezervasyon işlemleri ve diğer bölümler için gerekli route’lar tanımlandı.
 
 - **Validation ve Güvenlik:**  
   - Formlarda CSRF koruması ve sunucu tarafı doğrulama aktif.
@@ -65,7 +69,7 @@ Aşağıda, proje kapsamında yapılan ana geliştirmeler ve mimari hakkında ö
 
 ## Sonraki Adımlar (Öneriler)
 
-- Admin paneli ile rezervasyonları listeleme ve yönetme
+- Admin paneli ile rezervasyonları ve içerikleri listeleme ve yönetme
 - Rezervasyonlara e-posta bildirimi ekleme
 - Kullanıcı kayıt/giriş sistemi
 - Responsive ve mobil uyumlu tasarım geliştirmeleri
