@@ -1,7 +1,20 @@
 # Barbershop Laravel Projesi
 
-Bu proje, Laravel ile geliştirilmiş bir berber rezervasyon ve tanıtım sitesidir.  
-Aşağıda, proje kapsamında yapılan ana geliştirmeler ve mimari hakkında özet bilgi bulabilirsiniz.
+Bu proje, Laravel ile geliştirilmiş modern bir berber rezervasyon ve tanıtım sitesidir.  
+Aşağıda, proje kapsamında yapılan ana geliştirmeler, kullanılan teknolojiler ve mimari hakkında özet bilgi bulabilirsiniz.
+
+---
+
+## Kullanılan Teknolojiler
+
+- **Laravel** (PHP 8+): Sunucu tarafı uygulama çatısı
+- **Filament Admin Panel**: Yönetim paneli ve CRUD işlemleri
+- **Blade**: Laravel’in şablon motoru
+- **TailwindCSS**: Modern ve hızlı CSS framework’ü
+- **Vite**: Asset derleyici ve hızlı geliştirme ortamı
+- **MySQL**: Veritabanı yönetimi
+- **PostCSS & Autoprefixer**: CSS derleme ve tarayıcı uyumluluğu
+- **JavaScript (ES6+)**: Dinamik ön yüz işlemleri
 
 ---
 
@@ -51,10 +64,15 @@ Aşağıda, proje kapsamında yapılan ana geliştirmeler ve mimari hakkında ö
   - Formdan gelen veriler doğrulanıyor ve `bookings` tablosuna kaydediliyor.
   - `BookingController` ile form işlemleri yönetiliyor.
 
+- **Filament Admin Panel:**  
+  - Rezervasyonlar, hizmetler, berberler ve ana sayfa içerikleri için CRUD işlemleri yapılabiliyor.
+  - Yönetici paneli üzerinden içerik ve rezervasyon yönetimi sağlanıyor.
+
 - **Veritabanı Yapısı:**  
   - `bookings` tablosu: Rezervasyon bilgileri (isim, telefon, tarih, saat, şube, kişi sayısı, yorum).
   - `home_contents` tablosu: Ana sayfa dinamik içerikleri için.
   - `stories` tablosu: Berberler ve hikayeleri için.
+  - `services` tablosu: Sunulan hizmetler ve fiyatları için.
 
 - **Route Yönetimi:**  
   - Ana sayfa, rezervasyon işlemleri ve diğer bölümler için gerekli route’lar tanımlandı.
