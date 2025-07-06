@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('home_contents', function (Blueprint $table) {
-            $table->id();
-            $table->string('title')->nullable();
-            $table->text('description')->nullable();
-            $table->string('callout_title')->nullable();
-            $table->timestamps();
+        Schema::table('home_contents', function (Blueprint $table) {
+            $table->string('callout_title')->nullable()->change();
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('home_contents');
+        Schema::table('home_contents', function (Blueprint $table) {
+            $table->string('callout_title')->nullable(false)->change();
+        });
     }
 };
