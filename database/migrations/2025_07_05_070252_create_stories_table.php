@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('stories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('image')->nullable();
+            $table->longText('image')->nullable();
             $table->text('bio')->nullable();
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();

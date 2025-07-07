@@ -11,9 +11,12 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $content = HomeContent::first(); //tek bir kayıt olucak
+        // Ana sayfa içeriği için en son eklenen kaydı al
+        $content = HomeContent::latest()->first();
+
         $stories = Story::all();
-        $services = Service::all(); // Fetch all services
+        $services = Service::all();
+
         return view('welcome', compact('content','stories', 'services'));
     }
 }

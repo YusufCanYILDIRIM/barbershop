@@ -1,4 +1,4 @@
- <div class="container-fluid">
+<div class="container-fluid">
             <div class="row">
 
                 <button class="navbar-toggler d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -468,3 +468,23 @@
             @include('script')
 
         </div>
+
+        <!-- Hero veya giriş bölümünden hemen sonra ekleyin -->
+<section class="barbers-section section-padding" id="barbers-section">
+    <div class="container">
+        <div class="row">
+            <h2 class="mb-5">Meet Barbers</h2>
+            @foreach($stories as $story)
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="barber-card">
+                        <img src="{{ $story->image }}" class="img-fluid" alt="{{ $story->name }}">
+                        <div class="barber-info mt-3">
+                            <h5>{{ $story->name }}</h5>
+                            <p>{{ $story->bio }}</p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
