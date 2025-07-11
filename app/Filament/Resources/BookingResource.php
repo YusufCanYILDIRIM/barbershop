@@ -25,13 +25,13 @@ class BookingResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')->required(),
-                Forms\Components\TextInput::make('phone')->required(),
+                Forms\Components\TextInput::make('full_name')->required(),
+                Forms\Components\TextInput::make('mobile')->required(),
                 Forms\Components\DatePicker::make('date')->required(),
                 Forms\Components\TimePicker::make('time')->required(),
                 Forms\Components\TextInput::make('branch')->required(),
-                Forms\Components\TextInput::make('person_count')->numeric(),
-                Forms\Components\Textarea::make('comment'),
+                Forms\Components\TextInput::make('number_of_people')->numeric()->required(),
+                Forms\Components\Textarea::make('comments'),
             ]);
     }
 
@@ -39,13 +39,13 @@ class BookingResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('phone'),
-                Tables\Columns\TextColumn::make('date'),
-                Tables\Columns\TextColumn::make('time'),
-                Tables\Columns\TextColumn::make('branch'),
-                Tables\Columns\TextColumn::make('person_count'),
-                Tables\Columns\TextColumn::make('comment')->limit(20),
+                Tables\Columns\TextColumn::make('full_name')->label('Ad Soyad'),
+                Tables\Columns\TextColumn::make('mobile')->label('Telefon'),
+                Tables\Columns\TextColumn::make('date')->label('Tarih'),
+                Tables\Columns\TextColumn::make('time')->label('Saat'),
+                Tables\Columns\TextColumn::make('branch')->label('Şube'),
+                Tables\Columns\TextColumn::make('number_of_people')->label('Kişi Sayısı'),
+                Tables\Columns\TextColumn::make('comments')->label('Yorum')->limit(20),
             ])
             ->filters([
                 //

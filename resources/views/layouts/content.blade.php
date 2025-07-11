@@ -475,8 +475,8 @@
         <div class="row">
             <h2 class="mb-5">Meet Barbers</h2>
             @foreach($stories as $story)
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="barber-card">
+                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                    <div class="barber-card w-100">
                         <img src="{{ $story->image }}" class="img-fluid" alt="{{ $story->name }}">
                         <div class="barber-info mt-3">
                             <h5>{{ $story->name }}</h5>

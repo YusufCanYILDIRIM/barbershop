@@ -21,10 +21,11 @@ class StoryResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')->required(),
-                Forms\Components\FileUpload::make('photo')->image(),
+                Forms\Components\FileUpload::make('image')->image(), // 'photo' yerine 'image'
                 Forms\Components\Textarea::make('bio'),
                 Forms\Components\TextInput::make('instagram'),
                 Forms\Components\TextInput::make('facebook'),
+                Forms\Components\TextInput::make('whatsapp'),
             ]);
     }
 
@@ -33,7 +34,7 @@ class StoryResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\ImageColumn::make('photo'),
+                Tables\Columns\ImageColumn::make('image'), // 'photo' yerine 'image'
                 Tables\Columns\TextColumn::make('bio')->limit(30),
                 Tables\Columns\TextColumn::make('instagram'),
                 Tables\Columns\TextColumn::make('facebook'),

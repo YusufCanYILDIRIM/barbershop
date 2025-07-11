@@ -14,7 +14,7 @@ class HomeController extends Controller
         // Ana sayfa içeriği için en son eklenen kaydı al
         $content = HomeContent::latest()->first();
 
-        $stories = Story::all();
+        $stories = Story::latest()->take(2)->get();
         $services = Service::all();
 
         return view('welcome', compact('content','stories', 'services'));
